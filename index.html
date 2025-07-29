@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Manager</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="container text-center p-4">
+        <div class="title d-flex justify-content-center">
+            <h1 class="py-2 position-relative">Bookmarker</h1>
+        </div>
+        <hr />
+        <div class="bookmark-text">
+            <h2>
+            <i class="fa-solid fa-bookmark fa-xs"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark fa-xs"></i>
+            </h2>
+        </div>
+        <div class="bookmark-form text-start p-3">
+            <label for="siteName">
+            <i class="fa-solid fa-book-bookmark"></i> Site Name
+            </label>
+            <input oninput="validationName()" placeholder="Bookmark Name" type="text" id="siteName" class="form-control"/>
+            <p id="nameAlert" class="alert alert-danger d-none">Name must start with a letter and be 3-13 characters.</p>
+            <label for="siteUrl"> <i class="fa-solid fa-link"></i> Site URL </label>
+            <input oninput="validationUrl()" id="siteUrl" type="text" placeholder="https://www.google.com" class="form-control my-1"/>
+            <p id="urlAlert" class="alert alert-danger d-none">Please enter a valid URL (e.g. https://example.com)</p>
+            <button id="addButton" onclick="addData()" class="btn w-25 my-4 d-block mx-auto">Add</button>
+            <button id="updateButton" onclick="updateData()" class="btn w-25 my-3 d-block mx-auto bg-light text-warning d-none">Update</button>
+            <hr />
+            <input id="searchButtton" oninput="searchData()" type="text" class="form-control w-50 mx-auto my-5" placeholder="Search"/>
+            <table class="table text-center table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Website Name</th>
+                        <th>URL</th>
+                        <th>Visit</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
